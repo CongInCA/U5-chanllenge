@@ -1,12 +1,15 @@
 <h1>Products</h1>
 <ul>
   <% @products.each do |product| %>
-      <li>
-        <a href="<%= product_path(product) %>">
-
-        <%= "#{product.title}, #{product.description}, #{product.price}, #{product.stock_quantity}" %>
-
-        </a>
-      </li>
+    <li>
+      <a href="<%= product_path(product) %>">
+        <h2><%= product.title %></h2>
+        <p><%= product.description %></p>
+        <p>Price: <%= product.price %></p>
+        <p>Stock Quantity: <%= product.stock_quantity %></p>
+        <%# when you have associations between models, using product.category will return the entire associated Category object. %>
+        <p>Category: <%= product.category.name %></p>
+      </a>
+    </li>
   <% end %>
 </ul>
