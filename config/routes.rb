@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root "products#index"
 
+  resources :products
+
   # When the url add /products, the page will direct to the index action (Controller) and index page (View).
   get '/products', to: 'products#index'
 
