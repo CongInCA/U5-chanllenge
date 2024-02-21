@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  root "products#index"
+
+  # When the url add /products, the page will direct to the index action (Controller) and index page (View).
+  get '/products', to: 'products#index'
+
   get 'products/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
